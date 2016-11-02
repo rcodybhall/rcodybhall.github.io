@@ -1,4 +1,6 @@
 var user = "Ryan";
+//element = document.getElementById(id);
+
 
 if (user == "Ryan")
 {
