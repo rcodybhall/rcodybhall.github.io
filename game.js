@@ -1,3 +1,11 @@
-var fruit = ["oranges", "bananas", "lemons", "mangos", "kiwis"];
+var user = "Ryan";
 
-document.write("I like " + fruit[0])
+if (user == "Ryan")
+{
+  fruit = ["Apples", "Oranges"]
+}
+else {
+  var fruit = ["oranges", "bananas", "lemons", "mangos", "kiwis"];
+}
+
+document.write(user + "likes " + fruit[0])
