@@ -8,4 +8,4 @@ else {
   var fruit = ["oranges", "bananas", "lemons", "mangos", "kiwis"];
 }
 
-document.write(user + "likes " + fruit[0])
+document.write(user + " likes " + fruit[0])
