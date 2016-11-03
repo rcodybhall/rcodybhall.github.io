@@ -1,7 +1,8 @@
-window.onload = function() {
+/*window.onload = function() {
   if (fruitOut == "Apples")
     newColor = 'Red';
 }
+*/
 
 function changeColor(newColor)
   {
