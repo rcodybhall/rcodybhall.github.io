@@ -3,7 +3,7 @@ var user = "Ryan";
 
 if (user == "Ryan")
 {
-  var fruit = ["Apples", "Oranges"]
+  var fruit = ["Apples", "Oranges"];
 }
 else {
   var fruit = ["oranges", "bananas", "lemons", "mangos", "kiwis"];
