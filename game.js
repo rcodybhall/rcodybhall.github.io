@@ -1,5 +1,4 @@
 
-
 var user = "Ryan";
 
 if (user == "Ryan")
@@ -10,4 +9,4 @@ else {
   var fruit = ["oranges", "bananas", "lemons", "mangos", "kiwis"];
 }
 
-document.write(user + " likes " + fruit[0])
+document.getElementById(fruitOut).innerHTML = user + "Likes" + fruit;
