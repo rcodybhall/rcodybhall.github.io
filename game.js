@@ -1,6 +1,5 @@
 window.onload = function() {
-    var user = "Ryan";
-    var users = ["Matthew","Will","Ethan","Justin","Ryan"];
+    var user = DatabasePerson;
 
       if (users == "Ryan")
       {
