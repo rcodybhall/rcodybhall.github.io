@@ -1,5 +1,6 @@
+
+/*
 var user = "Ryan";
-//element = document.getElementById(id);
 
 
 if (user == "Ryan")
@@ -11,3 +12,10 @@ else {
 }
 
 document.write(user + " likes " + fruit[0])
+*/
+
+
+function changeColor(newColor) {
+  var elem = document.getElementById("para1");
+  elem.style.color = newColor;
+}
