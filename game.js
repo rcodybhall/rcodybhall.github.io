@@ -9,4 +9,4 @@ else {
   var fruit = ["oranges", "bananas", "lemons", "mangos", "kiwis"];
 }
 
-document.getElementById(fruitOut).innerHTML = user + "Likes" + fruit;
+document.getElementById(fruitOut).innerHTML = user + " likes " + fruit;
