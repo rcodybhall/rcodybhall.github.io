@@ -1,4 +1,3 @@
-
 /*
 var user = "Ryan";
 
@@ -13,7 +12,6 @@ else {
 
 document.write(user + " likes " + fruit[0])
 */
-
 
 function changeColor(newColor) {
   var elem = document.getElementById("para1");
