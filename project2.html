@@ -29,7 +29,7 @@
 
 				<!-- Main -->
 					<div style="height:500px; margin-left:auto; maring-right:auto;" id="main">
-              <canvas id="myCanvas" width="480" height="320"></canvas>
+              <canvas id="myCanvas" style="background-size:cover;"></canvas>
 					</div>
 
 					<script>
@@ -38,8 +38,8 @@
 					var ballRadius = 10;
 					var x = canvas.width/2;
 					var y = canvas.height-30;
-					var dx = 2;
-					var dy = -2;
+					var dx = 4;
+					var dy = -4;
 					var paddleHeight = 10;
 					var paddleWidth = 75;
 					var paddleX = (canvas.width-paddleWidth)/2;
@@ -111,14 +111,14 @@
 					function drawBall() {
 					    ctx.beginPath();
 					    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-					    ctx.fillStyle = "#0095DD";
+					    ctx.fillStyle = "#e74c3c";
 					    ctx.fill();
 					    ctx.closePath();
 					}
 					function drawPaddle() {
 					    ctx.beginPath();
 					    ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-					    ctx.fillStyle = "#0095DD";
+					    ctx.fillStyle = "#3498db";
 					    ctx.fill();
 					    ctx.closePath();
 					}
@@ -132,7 +132,7 @@
 					                bricks[c][r].y = brickY;
 					                ctx.beginPath();
 					                ctx.rect(brickX, brickY, brickWidth, brickHeight);
-					                ctx.fillStyle = "#0095DD";
+					                ctx.fillStyle = "#FF0000";
 					                ctx.fill();
 					                ctx.closePath();
 					            }
@@ -178,8 +178,8 @@
 					            else {
 					                x = canvas.width/2;
 					                y = canvas.height-30;
-					                dx = 3;
-					                dy = -3;
+					                dx = 5;
+					                dy = -5;
 					                paddleX = (canvas.width-paddleWidth)/2;
 					            }
 					        }
