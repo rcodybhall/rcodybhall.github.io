@@ -29,7 +29,7 @@
 
 				<!-- Main -->
 					<div style="height:500px; margin-left:auto; maring-right:auto;" id="main">
-              <canvas id="myCanvas" style="background-size:cover;"></canvas>
+              <canvas id="myCanvas"></canvas>
 					</div>
 
 					<script>
@@ -99,7 +99,7 @@
 					                    b.status = 0;
 					                    score++;
 					                    if(score == brickRowCount*brickColumnCount) {
-					                        alert("YOU WIN, CONGRATS!");
+					                        console.log("YOU WIN, CONGRATS!");
 					                        document.location.reload();
 					                    }
 					                }
@@ -172,7 +172,7 @@
 					        else {
 					            lives--;
 					            if(!lives) {
-					                alert("GAME OVER");
+					                console.log("GAME OVER");
 					                document.location.reload();
 					            }
 					            else {
