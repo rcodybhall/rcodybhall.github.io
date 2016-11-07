@@ -34,6 +34,14 @@
 
 					<script>
 					var canvas = document.getElementById("myCanvas");
+					window.addEventListener('resize', resizeCanvas, false);
+
+					function resizeCanvas()
+					{
+							canvas.width = window.innerWidth;
+							canvas.height = window.innerHeight;
+					}
+
 					var ctx = canvas.getContext("2d");
 					var ballRadius = 10;
 					var x = canvas.width/2;
