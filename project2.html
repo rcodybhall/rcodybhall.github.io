@@ -34,20 +34,12 @@
 
 					<script>
 					var canvas = document.getElementById("myCanvas");
-					window.addEventListener('resize', resizeCanvas, false);
-
-					function resizeCanvas()
-					{
-							canvas.width = window.innerWidth;
-							canvas.height = window.innerHeight;
-					}
-
 					var ctx = canvas.getContext("2d");
 					var ballRadius = 10;
 					var x = canvas.width/2;
 					var y = canvas.height-30;
-					var dx = 4;
-					var dy = -4;
+					var dx = 2;
+					var dy = -2;
 					var paddleHeight = 10;
 					var paddleWidth = 75;
 					var paddleX = (canvas.width-paddleWidth)/2;
