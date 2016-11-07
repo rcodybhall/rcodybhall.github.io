@@ -1,5 +1,3 @@
-<html>
-<body>
 
 <?php
 $servername = "localhost";
@@ -16,5 +14,3 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 ?>
-</body>
-</html>

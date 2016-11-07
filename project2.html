@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	</head>
 	<body>
+    <style>
+      canvas { background: #eee; display: block; margin: 0 auto; }
+    </style>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -25,27 +28,8 @@
 					</header>
 
 				<!-- Main -->
-					<div style="height:500px;" id="main">
-            <p id="para1">Some text here</p>
-              <button onclick="changeColor('blue');">blue</button>
-              <button onclick="changeColor('red');">red</button>
-              <button onclick="changeColor('yellow');">Yellow</button>
-
-              <!--div id="fruitOut"><div><p>Test</p></div></div-->
-
-              <!--form action="submit.php" method="post">
-                Name: <input type="text" name="name"><br>
-                E-mail: <input type="text" name="email"><br>
-                <input type="submit">
-              </form-->
-
-              <button onclick="openWindow();">Open Window</button>
-                <br>
-              <div id="dialog" title="Basic dialog">
-                <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-              </div>
-
-
+					<div style="height:500px; margin-left:auto; maring-right:auto;" id="main">
+              <canvas id="myCanvas" width="480" height="320"></canvas>
 					</div>
 
 				<!-- Footer -->
