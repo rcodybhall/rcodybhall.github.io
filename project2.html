@@ -30,8 +30,21 @@
 				<!-- Main -->
           <canvas id="myCanvas"></canvas>
 
+					<div id="printArea"></div>
+
+					<script>
+					var scoreString = "200 Points!";
+					document.getElementByID("printArea").innerHTML = "<div>" + scoreString + "</div>";
+
+
+					</script>
+
+
 					<script>
 					var canvas = document.getElementById("myCanvas");
+
+
+
 					var ctx = canvas.getContext("2d");
 					var ballRadius = 10;
 					var x = canvas.width/2;
