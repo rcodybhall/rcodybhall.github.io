@@ -29,9 +29,10 @@
 					</header>
 
 					<div ng-app="">
-					 	<p>Name : <input type="text" ng-model="name"></p>
-					 	<h1>Hello {{name}}</h1>
-						<button onclick="draw();"></button>
+					 	<p>Gamertag : <input type="text" id="name" ng-model="name"></p>
+					 	<h1>Hello {{GamerTag}}</h1>
+						<button onclick="draw();">Start</button>
+						<button onclick="end()"></button>
 					</div>
 
 				<!-- Main -->
@@ -47,6 +48,8 @@
 
 					<script>
 					var canvas = document.getElementById("myCanvas");
+					var name = document.getElementByID("name");
+
 
 					var ctx = canvas.getContext("2d");
 					var ballRadius = 10;
