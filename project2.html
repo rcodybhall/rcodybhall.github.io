@@ -29,10 +29,10 @@
 					</header>
 
 					<div ng-app="">
-					 	<p>Gamertag : <input type="text" id="name" ng-model="name"></p>
+					 	<p>Gamertag : <input width="100px" type="text" id="name" ng-model="name"></p>
 					 	<h1>Hello {{GamerTag}}</h1>
 						<button onclick="draw();">Start</button>
-						<button onclick="end()"></button>
+						<button onclick="end()">End</button>
 					</div>
 
 				<!-- Main -->
@@ -49,8 +49,6 @@
 					<script>
 					var canvas = document.getElementById("myCanvas");
 					var name = document.getElementByID("name");
-
-
 					var ctx = canvas.getContext("2d");
 					var ballRadius = 10;
 					var x = canvas.width/2;
@@ -212,6 +210,10 @@
 					    x += dx;
 					    y += dy;
 					    requestAnimationFrame(draw);
+					}
+
+					function End {
+
 					}
 
 
