@@ -83,6 +83,13 @@
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
 
+					function start(){
+						dx = 2;
+						dy = -2;
+						drawBall();
+						drawPaddle();
+					}
+					
 					function keyDownHandler(e) {
 					    if(e.keyCode == 39) {
 					        rightPressed = true;
@@ -166,12 +173,6 @@
 					    ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 					}
 
-					function start(){
-						dx = 2;
-						dy = -2;
-						drawBall();
-						drawPaddle();
-					}
 
 					function draw() {
 					    ctx.clearRect(0, 0, canvas.width, canvas.height);
