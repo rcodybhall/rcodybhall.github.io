@@ -85,10 +85,11 @@
 
 					function start(){
 						var randomDX = Math.floor(Math.random() * 6) + 1
+						var randomDY = Math.floor(Math.random() * 6) + 1
 
-						console.log(randomDX);  
-						dx = 2;
-						dy = -2;
+						console.log(randomDX);
+						dx = randomDX;
+						dy = randomDY;
 					}
 
 					function keyDownHandler(e) {
