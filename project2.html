@@ -32,7 +32,7 @@
 					<div ng-app="">
 					 	<!--p>Gamertag : <input width="100px" type="text" id="name" ng-model="name"></p>
 					 	<h1>Hello {{GamerTag}}</h1-->
-						<button onclick="draw();">Start</button>
+						<button onclick="start();">Start</button>
 						<!--button onclick="end();">End</button-->
 					</div>
 
@@ -174,7 +174,7 @@
 					    drawScore();
 					    drawLives();
 					    collisionDetection();
-							
+
 					    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
 					        dx = -dx;
 					    }
@@ -212,6 +212,8 @@
 					    y += dy;
 					    requestAnimationFrame(draw);
 					}
+
+					draw();
 
 
 				</script>
