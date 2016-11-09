@@ -87,16 +87,17 @@
 					document.addEventListener("mousemove", mouseMoveHandler, false);
 
 					function easy(){
-						var randomEasyDX = Math.floor(Math.random() * 5) + 1
-						var randomEasyDY = Math.floor(Math.random() * 5) + 1
+						var randomEasyDX = Math.floor(Math.random() * 5) + 1;
+						var randomEasyDY = Math.floor(Math.random() * 5) + 1;
+						console.log("Direction:" + randomEasyDX);
 						var negative ="-";
 						dx = randomEasyDX;
 						dy = negative+randomEasyDY;
 					}
 
 					function medium(){
-						var randomMediumDX = Math.floor(Math.random() * 7) + 5
-						var randomMediumDY = Math.floor(Math.random() * 7) + 5
+						var randomMediumDX = Math.floor(Math.random() * 7) + 5;
+						var randomMediumDY = Math.floor(Math.random() * 7) + 5;
 						var negative ="-";
 						dx = randomMediumDX;
 						dy = negative+randomMediumDY;
