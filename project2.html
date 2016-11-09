@@ -32,7 +32,8 @@
 					<div ng-app="">
 					 	<!--p>Gamertag : <input width="100px" type="text" id="name" ng-model="name"></p>
 					 	<h1>Hello {{GamerTag}}</h1-->
-						<button onclick="easy();">Easy</checkbox><checkbox onclick="medium();">Medium</checkbox>
+						<button onclick="easy();">Easy</button>
+						<button onclick="medium();">Medium</button>
 						<br>
 						<button style="margin-left:auto; margin-right:auto; text-align:center;" onclick="start();">Start</button>
 						<!--button onclick="end();">End</button-->
@@ -84,8 +85,6 @@
 					document.addEventListener("keydown", keyDownHandler, false);
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
-
-
 
 					function easy(){
 						var randomEasyDX = Math.floor(Math.random() * 5) + 1
