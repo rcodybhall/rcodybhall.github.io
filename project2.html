@@ -86,10 +86,8 @@
 					function start(){
 						dx = 2;
 						dy = -2;
-						drawBall();
-						drawPaddle();
 					}
-					
+
 					function keyDownHandler(e) {
 					    if(e.keyCode == 39) {
 					        rightPressed = true;
@@ -177,6 +175,8 @@
 					function draw() {
 					    ctx.clearRect(0, 0, canvas.width, canvas.height);
 					    drawBricks();
+							drawBall();
+							drawPaddle();
 					    drawScore();
 					    drawLives();
 					    collisionDetection();
