@@ -86,10 +86,10 @@
 					function start(){
 						var randomDX = Math.floor(Math.random() * 6) + 1
 						var randomDY = Math.floor(Math.random() * 6) + 1
-
+						var negative ="-";
 						console.log(randomDX);
 						dx = randomDX;
-						dy = randomDY;
+						dy = negative+randomDY;
 					}
 
 					function keyDownHandler(e) {
