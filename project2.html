@@ -34,7 +34,8 @@
 					</div>
 
 					<div>
-						<button onclick="buttonPress();">Start</button>
+						<button onclick=""></button>
+						<!--button onclick="buttonPress();">Start</button-->
 					</div>
 
 				<!-- Main -->
@@ -55,10 +56,8 @@
 					var ballRadius = 10;
 					var x = canvas.width/2;
 					var y = canvas.height-30;
-					//var dx = 2;
-					//var dy = -2;
-					var dx = 0;
-					var dy = 0;
+					var dx = 2;
+					var dy = -2;
 					var paddleHeight = 10;
 					var paddleWidth = 75;
 					var paddleX = (canvas.width-paddleWidth)/2;
@@ -74,7 +73,7 @@
 					var score = 0;
 					var lives = 3;
 
-					var alreadyStarted = 0;
+					//var alreadyStarted = 0;
 
 					var bricks = [];
 					for(c=0; c<brickColumnCount; c++) {
@@ -87,6 +86,9 @@
 					document.addEventListener("keydown", keyDownHandler, false);
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
+
+
+					/*
 					function buttonPress(){
 
 						if (alreadyStarted == 0)
@@ -105,18 +107,14 @@
 						dx = 2;
 						dy = -2;
 						alreadyStarted = 1;
-
+						*/
 						/*
 						dx = Math.floor(Math.random() * 5) + 2;
 						dyNoNegative = Math.floor(Math.random() * 5) + 2;
 						var negative = "-";
 						dy = negative + dyNoNegative;
-						*/
-					}
 
-
-
-
+					}*/
 
 
 					function keyDownHandler(e) {
