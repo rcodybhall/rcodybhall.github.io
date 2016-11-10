@@ -34,7 +34,7 @@
 					</div>
 
 					<div>
-						<button onclick="start();">Start</button>
+						<button onclick="buttonPress();">Start</button>
 					</div>
 
 				<!-- Main -->
@@ -74,6 +74,8 @@
 					var score = 0;
 					var lives = 3;
 
+					var alreadyStarted = 0;
+
 					var bricks = [];
 					for(c=0; c<brickColumnCount; c++) {
 					    bricks[c] = [];
@@ -85,12 +87,24 @@
 					document.addEventListener("keydown", keyDownHandler, false);
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
+					function buttonPress(){
+
+						if (alreadyStarted == 0)
+							{
+								start();
+							}
+						else
+							{
+
+							}
+					}
 
 
 					function start(){
 						//alert("test");
 						dx = 2;
 						dy = -2;
+						alreadyStarted = 1;
 
 						/*
 						dx = Math.floor(Math.random() * 5) + 2;
@@ -99,6 +113,10 @@
 						dy = negative + dyNoNegative;
 						*/
 					}
+
+
+
+
 
 
 					function keyDownHandler(e) {
