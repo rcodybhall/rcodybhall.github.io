@@ -32,9 +32,8 @@
 					<div ng-app="">
 					 	<p>Gamertag : <input width="100px" type="text" id="name" ng-model="name"></p>
 					 	<h1>Hello {{GamerTag}}</h1>
-						<button onclick="easyMode();">Easy</button>
-						<br>
-						<!--button style="margin-left:auto; margin-right:auto; text-align:center;" onclick="start();">Start</button-->
+						<button onlick="start();">Start</button>
+						<button style="margin-left:auto; margin-right:auto; text-align:center;" onclick="start();">Start</button>
 						<!--button onclick="end();">End</button-->
 					</div>
 
@@ -85,16 +84,15 @@
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
 
-					function easyMode(){
-						var randomEasyDX = Math.floor(Math.random() * 5) + 1;
-						var randomEasyDY = Math.floor(Math.random() * 5) + 1;
-						console.log("Direction:" + randomEasyDX);
+
+					function start(){
+						var randomDX = Math.floor(Math.random() * 6) + 1
+						var randomDY = Math.floor(Math.random() * 6) + 1
 						var negative ="-";
-						dx = randomEasyDX;
-						dy = negative+randomEasyDY;
-
+						console.log(randomDX);
+						dx = randomDX;
+						dy = negative+randomDY;
 					}
-
 
 					function keyDownHandler(e) {
 					    if(e.keyCode == 39) {
@@ -112,7 +110,6 @@
 					        leftPressed = false;
 					    }
 					}
-
 					function mouseMoveHandler(e) {
 					    var relativeX = e.clientX - canvas.offsetLeft;
 					    if(relativeX > 0 && relativeX < canvas.width) {
