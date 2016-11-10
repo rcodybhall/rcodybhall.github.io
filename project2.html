@@ -86,15 +86,12 @@
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
 
-					/*
+
 					function start(){
-						var randomDX = Math.floor(Math.random() * 4) + 3;
-						var randomDY = Math.floor(Math.random() * 4) + 3;
-						var negative ="-";
-						dx = randomDX;
-						dy = negative+randomDY;
+						dx = Math.floor(Math.random() * 4) + 3;
+						dy = -2;
 					}
-					*/
+
 
 					function keyDownHandler(e) {
 					    if(e.keyCode == 39) {
