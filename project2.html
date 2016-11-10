@@ -86,14 +86,13 @@
 
 
 					function start(){
-						console.log("Started");
 						var randomDX = Math.floor(Math.random() * 4) + 3;
 						var randomDY = Math.floor(Math.random() * 4) + 3;
 						var negative ="-";
 						dx = randomDX;
 						dy = negative+randomDY;
 
-						alert(dx);
+						draw();
 					}
 
 					function keyDownHandler(e) {
@@ -226,9 +225,6 @@
 					    y += dy;
 					    requestAnimationFrame(draw);
 					}
-
-					draw();
-
 
 				</script>
 
