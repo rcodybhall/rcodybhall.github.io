@@ -28,14 +28,19 @@
 						<p>Project 2 - Creating a JavaScript / PHP Thing</p>
 					</header>
 
-					<div style="width:200px;margin-left:auto;margin-right:auto;" ng-app="">
-					 	<p>Name : <input type="text" ng-model="name"></p>
+					<!--div style="width:200px;margin-left:auto;margin-right:auto;" ng-app="">
+					 	<p>Name : <input id="name" type="text" ng-model="name"></p>
 					 	<h1>Hello {{name}}</h1>
-					</div>
+					</div-->
+
+					Name:<input id="name" type="text"></input>
+
+					<submit></submit>
 
 					<div>
 						<!--button onclick="start();"></button-->
 						<button onclick="buttonPress();">Start</button>
+						<button onclick="pause();">Pause</buton>
 					</div>
 
 				<!-- Main -->
@@ -51,13 +56,13 @@
 
 					<script>
 					var canvas = document.getElementById("myCanvas");
-					/*var name = document.getElementByID("name");*/
+					var name = document.getElementByID("name");
 					var ctx = canvas.getContext("2d");
 					var ballRadius = 10;
 					var x = canvas.width/2;
 					var y = canvas.height-30;
-					var dx = 2;
-					var dy = -2;
+					var dx = 0;
+					var dy = 0;
 					var paddleHeight = 10;
 					var paddleWidth = 75;
 					var paddleX = (canvas.width-paddleWidth)/2;
@@ -86,8 +91,6 @@
 					document.addEventListener("keyup", keyUpHandler, false);
 					document.addEventListener("mousemove", mouseMoveHandler, false);
 
-
-
 					function buttonPress(){
 
 						if (alreadyStarted == 0)
@@ -113,7 +116,6 @@
 						dy = negative + dyNoNegative;
 
 					}
-
 
 					function keyDownHandler(e) {
 					    if(e.keyCode == 39) {
