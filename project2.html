@@ -51,26 +51,29 @@
 
 				<form>
 			    <h1>Please enter data</h1>
-					<p id="currentScore" type="text">1029pts</p>
+					<!--p id="currentScore" type="text">1029pts</p-->
 			    <input id="title" type="text" placeholder="Title" />
 			    <input id="name" type="text" placeholder="Name" />
 			    <input id="tickets" type="text" placeholder="Tickets" />
-			    <input type="button" value="Save/Show" onclick="insert()" />
-			  </form>
-			  <div id="display"></div>
 
+			    <input type="button" value="Save/Show" onclick="insert()" /3>
+			  </form>
+
+			  <div id="display"></div>
 
 				<script>
 				// This area declares the empty array areas as place holders.
 				var titles  = [];
 				var names   = [];
 				var tickets = [];
-				var score = [];
+
+				//var score = [];
+
 				// The below gets all of the all of the elements needed from the HTML above by their ID.
 				var titleInput  = document.getElementById("title");
 				var nameInput   = document.getElementById("name");
 				var ticketInput = document.getElementById("tickets");
-				var scoreInput = document.getElementById("currentScore").text;
+				//var scoreInput = document.getElementById.innerHTML("currentScore");
 
 				var messageBox  = document.getElementById("display");
 
@@ -79,26 +82,28 @@
 				 titles.push( titleInput.value );
 				 names.push( nameInput.value );
 				 tickets.push( ticketInput.value );
-				 score.push( scoreInput.value );
+			// score.push( scoreInput.value );
 
 				 clearAndShow();
 				}
-				// This function clears out the fields when the submit button is clicked.
+			// This function clears out the fields when the submit button is clicked.
 				function clearAndShow () {
 				  titleInput.value = "";
 				  nameInput.value = "";
 				  ticketInput.value = "";
-					scoreInput.value = "";
+			//	scoreInput.value = "";
 
 				  // Show our output
 				  messageBox.innerHTML = "";
+
 				  messageBox.innerHTML += "Titles: " + titles.join(", ") + "<br/>";
 				  messageBox.innerHTML += "Names: " + names.join(", ") + "<br/>";
 				  messageBox.innerHTML += "Tickets: " + tickets.join(", ") + "<br/>";
-					messageBox.innerHTML += "Score:" + score.join("-") + "<br/>";
+		//		messageBox.innerHTML += "Score:" + score.join(",") + "<br/>";
 				}
 
 				</script>
+
 					</div>
 					<!--Name:<input id="name" type="text"></input-->
 					<!--submit></submit-->
@@ -309,17 +314,17 @@
 												{
 													start();
 													document.getElementById('button').innerHTML = "Pause";
-													console.log("First Start");
+													//console.log("First Start");
 												}
 											else if (alreadyStarted == 1)
 												{
-													console.log("Paused")
+													//console.log("Paused")
 													pause();
 													document.getElementById('button').innerHTML = "Unpause";
 												}
 											else if (alreadyStarted == 2)
 												{
-													console.log("Restarted")
+													//console.log("Restarted")
 													unpause();
 													document.getElementById('button').innerHTML = "Pause";
 												}
