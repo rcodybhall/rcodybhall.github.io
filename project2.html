@@ -35,18 +35,66 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>Project 2</h1>
-						<p>Project 2 - Creating a JavaScript / PHP Thing</p>
+						<p>Project 2 - Creating a JavaScript Game</p>
 					</header>
 
-					<div style="width:0px;margin-left:auto;margin-right:auto;" ng-app="">
-					 	<p>Name :</p> <input id="name" type="text" ng-model="name"></input>
-					 	<h1>Hello {{name}}</h1>
+					<div style="width:400px;margin-left:auto;margin-right:auto;" ng-app="">
+				<!--form name="scoreboardForm">
+							<p>Name :<input id="name" type="text" ng-model="name" required></input></p>
+							<h1>Hello {{name}}</h1>
+							<h1>{{scoreboardForm.name.$valid}}</h1>
+
+							<input type="button" value="Save" onclick="insert(this.form.title.value)">
+							<input type="button" value="Show data" onclick="show()"> <br>
+				</form-->
+
+				<form>
+			    <h1>Please enter data</h1>
+			    <input id="title" type="text" placeholder="Title" />
+			    <input id="name" type="text" placeholder="Name" />
+			    <input id="tickets" type="text" placeholder="Tickets" />
+			    <input type="button" value="Save/Show" onclick="insert()" />
+			  </form>
+			  <div id="display"></div>
+
+
+				<script>
+				var titles  = [];
+				var names   = [];
+				var tickets = [];
+
+				var titleInput  = document.getElementById("title");
+				var nameInput   = document.getElementById("name");
+				var ticketInput = document.getElementById("tickets");
+
+				var messageBox  = document.getElementById("display");
+
+				function insert ( ) {
+				 titles.push( titleInput.value );
+				 names.push( nameInput.value );
+				 tickets.push( ticketInput.value );
+
+				 clearAndShow();
+				}
+
+				function clearAndShow () {
+				  // Clear our fields
+				  titleInput.value = "";
+				  nameInput.value = "";
+				  ticketInput.value = "";
+
+				  // Show our output
+				  messageBox.innerHTML = "";
+
+				  messageBox.innerHTML += "Titles: " + titles.join(", ") + "<br/>";
+				  messageBox.innerHTML += "Names: " + names.join(", ") + "<br/>";
+				  messageBox.innerHTML += "Tickets: " + tickets.join(", ");
+				}
+
+				</script>
 					</div>
-
 					<!--Name:<input id="name" type="text"></input-->
-
 					<!--submit></submit-->
-
 					<div>
 						<!--button onclick="start();"></button-->
 						<button id="button" onclick="buttonPress();">Start</button>
@@ -55,7 +103,7 @@
 					</div>
 
 				<!-- Main -->
-          <canvas height="500" width="500" id="myCanvas"></canvas>
+          <!--canvas height="500" width="500" id="myCanvas"></canvas-->
 
 					<!--div id="printArea"></div-->
 
@@ -90,8 +138,8 @@
 					var score = 0;
 					var lives = 3;
 					var alreadyStarted = 0;
-				//	var currentDx = "";
-				//	var currentDy = "";
+					var currentDx = 2;
+					var currentDy = -2;
 
 
 					var bricks = [];
@@ -109,48 +157,6 @@
 
 //	document.getElementById("button").innerHTML = "Pause";
 
-					function buttonPress(){
-						if (alreadyStarted == 0)
-							{
-								start();
-								document.getElementById('button').innerHTML = "Pause";
-								console.log("First Start");
-							}
-						if (alreadyStarted == 1)
-							{
-								console.log("Paused")
-								pause();
-								document.getElementById('button').innerHTML = "Unpause";
-							}
-						if (alreadyStarted == 2)
-							{
-								console.log("Restarted")
-								unpause();
-								document.getElementById('button').innerHTML = "Pause";
-							}
-					}
-					function start(){
-					// alert("test");
-
-						dx = 10;
-						dy = -10;
-						alreadyStarted = 0;
-					}
-
-					function pause(){
-						dx = "";
-						dy = "";
-						//console.log("Paddle Disabled");
-						alreadyStarted = 2;
-					}
-
-					function unpause(){
-						var currentDX = 2;
-						var currentDY = -2;
-						dx = currentDX;
-						dy = currentDy;
-						//console.log("Paddle Enable");
-					}
 
 					function keyDownHandler(e) {
 					    if(e.keyCode == 39) {
@@ -181,6 +187,7 @@
 					            if(b.status == 1) {
 					                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
 					                    dy = -dy;
+															currentDy = dy;
 					                    b.status = 0;
 					                    score++;
 					                    if(score == brickRowCount*brickColumnCount) {
@@ -247,15 +254,18 @@
 
 					    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
 					        dx = -dx;
+									currentDx = dx;
 									//var currentDx = dx;
 					    }
 					    if(y + dy < ballRadius) {
 					        dy = -dy;
+									currentDy = dy;
 									//var currentDx = dy;
 					    }
 					    else if(y + dy > canvas.height-ballRadius) {
 					        if(x > paddleX && x < paddleX + paddleWidth) {
 					            dy = -dy;
+											currentDy = dy;
 					        }
 					        else {
 					            lives--;
@@ -267,7 +277,9 @@
 					                x = canvas.width/2;
 					                y = canvas.height-30;
 					                dx = 5;
+													currentDx = dx;
 					                dy = -5;
+													currentDy = dy;
 					                paddleX = (canvas.width-paddleWidth)/2;
 					            }
 					        }
@@ -284,6 +296,49 @@
 					    y += dy;
 					    requestAnimationFrame(draw);
 					}
+
+										function buttonPress(){
+											if (alreadyStarted == 0)
+												{
+													start();
+													document.getElementById('button').innerHTML = "Pause";
+													console.log("First Start");
+												}
+											else if (alreadyStarted == 1)
+												{
+													console.log("Paused")
+													pause();
+													document.getElementById('button').innerHTML = "Unpause";
+												}
+											else if (alreadyStarted == 2)
+												{
+													console.log("Restarted")
+													unpause();
+													document.getElementById('button').innerHTML = "Pause";
+												}
+										}
+										function start(){
+										// alert("test");
+
+											dx = 2;
+											dy = -2;
+											alreadyStarted = 1;
+										}
+
+										function pause(){
+											dx = 0;
+											dy = 0;
+											//console.log("Paddle Disabled");
+											alreadyStarted = 2;
+										}
+
+										function unpause(){
+											dx = currentDx;
+											dy = currentDy;
+											//console.log("Paddle Enable");
+											alreadyStarted = 1;
+										}
+
 
 				draw();
 
