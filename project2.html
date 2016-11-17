@@ -50,8 +50,8 @@
 					<div>
 						<!--button onclick="start();"></button-->
 						<button id="button" onclick="buttonPress();">Start</button>
-						<button onclick="pause();">Pause</buton>
-						<button onclick="unpause();">Unpause</button>
+						<!--button onclick="pause();">Pause</buton>
+						<button onclick="unpause();">Unpause</button-->
 					</div>
 
 				<!-- Main -->
@@ -113,17 +113,20 @@
 						if (alreadyStarted == 0)
 							{
 								start();
+								document.getElementById('button').innerHTML = "Pause";
 								console.log("First Start");
 							}
 						if (alreadyStarted == 1)
 							{
 								console.log("Paused")
 								pause();
+								document.getElementById('button').innerHTML = "Unpause";
 							}
 						if (alreadyStarted == 2)
 							{
 								console.log("Restarted")
 								unpause();
+								document.getElementById('button').innerHTML = "Pause";
 							}
 					}
 					function start(){
